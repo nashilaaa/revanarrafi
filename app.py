@@ -62,7 +62,8 @@ elif st.session_state.level == 3:
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NldjQ0Y2U3dm85eG92Z3NybjNidTMxaGRqbGdqazRoemhiaWhvMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tpVKvAabWt3G5csMkT/giphy.gif", caption="Heheh love youu 💞")
 
         elif pilihan_kotak == "Kotak C":
-            st.success("🎁 Kamu dapet hadiah spesial: *What do you want from me?* 🤭")
+            st.success("🎁 You can request anything: ")
+            st.markdown("> *“What Do Yo Want From Me??”*")
 
     if st.button("Lanjut ke Level 4"):
         naik_level()
