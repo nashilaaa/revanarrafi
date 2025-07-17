@@ -9,7 +9,6 @@ st.set_page_config(page_title="Birthday Quest 💖", page_icon="🎂")
 if "level" not in st.session_state:
     st.session_state.level = 1
 
-# Fungsi Naik Level
 def naik_level():
     st.session_state.level += 1
     st.rerun()
@@ -60,10 +59,9 @@ elif st.session_state.level == 3:
         elif pilihan_kotak == "Kotak B":
             st.success("Yeayyy! Kamu dapet... xtra kiss 😘")
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NldjQ0Y2U3dm85eG92Z3NybjNidTMxaGRqbGdqazRoemhiaWhvMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tpVKvAabWt3G5csMkT/giphy.gif", caption="Heheh love youu 💞")
-
         elif pilihan_kotak == "Kotak C":
             st.success("🎁 You can request anything: ")
-            st.markdown("> *“What Do Yo Want From Me??”*")
+            st.markdown("> *“What Do You Want From Me??”*")
 
     if st.button("Lanjut ke Level 4"):
         naik_level()
@@ -72,12 +70,21 @@ elif st.session_state.level == 3:
 # LEVEL 4
 # ============================
 elif st.session_state.level == 4:
-    st.header("🎈 Level 4: Where do you want to celebrate?")
-     pilihan_tempat = st.selectplace("Pilih salah satu tempatnya:", ["🏠 Di rumah aja, sambil ngobrol & nonton bareng", "🍽️ Romantic Dinner di tempat spesial", "🌌 Jalan-jalan malmingan liat bintang", "🏕️ Duduk santai di cafe terus photobooth dehh"])
-    tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?")
-    if tempat:
-        st.success(f"Okeee! Nanti kita {tempat} yaa sayaang 😍")
+    st.header("🎈 Level 4: Coming Soon or Fill This?")
+    st.write("Level ini masih kosong dulu yaa... atau kamu bisa pilih ini:")
+
+    pilihan = st.radio(
+        "Kalau kamu harus pilih salah satu tempat rayain ulang tahun, kamu pilih yang mana?",
+        ["", "🏠 Di rumah aja", "🍽️ Dinner romantis", "🌌 Liat bintang bareng", "🏕️ Duduk santai di cafe"],
+        index=0
+    )
+
+    if pilihan:
+        st.success(f"Okeee! Nanti kita {pilihan} yaa sayaang 😍")
         if st.button("Lanjut ke Level 5"):
+            naik_level()
+    else:
+        if st.button("Lewati duluu & lanjut ke Level 5"):
             naik_level()
 
 # ============================
