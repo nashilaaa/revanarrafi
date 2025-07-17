@@ -25,7 +25,7 @@ if st.session_state.level == 1:
     if jawaban1:
         if jawaban1 == "09-11":
             st.success("Yeeeaayy kamu inget!🥹💕 Kamu lulus Level 1!")
-            st.love()
+            st.balloon()
             if st.button("Lanjut ke Level 2"):
                 naik_level()
         else:
@@ -59,6 +59,8 @@ elif st.session_state.level == 3:
             st.markdown("> *“Semoga harimu selalu penuh cinta dan bahagia 💖”*")
         elif pilihan_kotak == "Kotak B":
             st.success("Yeayyy! Kamu dapet... xtra kiss 😘")
+            st.image("https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif", caption="Heheh love youu 💞")
+
         elif pilihan_kotak == "Kotak C":
             st.success("🎁 Kamu dapet hadiah spesial: *What do you want from me?* 🤭")
 
