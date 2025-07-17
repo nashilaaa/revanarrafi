@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+from PIL import Image
 
 st.set_page_config(page_title="Birthday Quest 💖", page_icon="🎂")
 
@@ -8,6 +9,9 @@ st.set_page_config(page_title="Birthday Quest 💖", page_icon="🎂")
 # ============================
 if "level" not in st.session_state:
     st.session_state.level = 1
+
+if "shown" not in st.session_state:
+    st.session_state.shown = []
 
 def naik_level():
     st.session_state.level += 1
@@ -35,7 +39,6 @@ if st.session_state.level == 1:
 # ============================
 elif st.session_state.level == 2:
     st.header("🧠 Level 2: About You💘")
-    st.write("Silahkan diisii sayaang~")
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
 
     if jawaban2:
@@ -72,12 +75,9 @@ elif st.session_state.level == 3:
 # ============================
 elif st.session_state.level == 4:
     st.header("🎈 Level 4: Where Do You want To Go To Celebrate?")
-    st.write("Pilih sesuai keinginanmu yaa sayaang:")
-
     pilihan = st.radio(
-        "Kamu harus pilih salah satu tempat rayain ulang tahun, kamu pilih yang mana sayangku?",
-        ["", "🏠 Di rumah aja, jajan dan nonton sama aku", "🍽️ Romantic Dinner", "🌌 Jalan-jalan malmingann, sambil ngopii", "🏕️ Duduk santai di cafe"],
-        index=0
+        "Kamu pilih mana sayangku?",
+        ["", "🏠 Di rumah aja", "🍽️ Romantic Dinner", "🌌 Jalan malming", "🏕️ Nongkrong cafe"]
     )
 
     if pilihan:
@@ -85,92 +85,87 @@ elif st.session_state.level == 4:
         if st.button("Lanjut ke Level 5"):
             naik_level()
     else:
-        if st.button("Lewati duluu & lanjut ke Level 5"):
+        if st.button("Lewati dulu & lanjut ke Level 5"):
             naik_level()
 
 # ============================
-# LEVEL 5 – Love Maze (Dropdown version)
+# LEVEL 5
 # ============================
 elif st.session_state.level == 5:
     st.header("🌀 Level 5: Love Maze")
-    st.write("Ceritanya kamu lagi ada di labirin, escape from it then kamu bakal ketemu aaku💘")
+    st.write("Escape this maze to meet me! 💘")
 
-    langkah1 = st.selectbox("Langkah 1: Mau ke mana dulu?", ["Pilih arah", "Kiri", "Kanan"], key="step1")
+    langkah1 = st.selectbox("Langkah 1:", ["Pilih arah", "Kiri", "Kanan"], key="step1")
     if langkah1 == "Kanan":
-        langkah2 = st.selectbox("Langkah 2: Terus ke mana lagi?", ["Pilih arah", "Maju", "Mundur"], key="step2")
+        langkah2 = st.selectbox("Langkah 2:", ["Pilih arah", "Maju", "Mundur"], key="step2")
         if langkah2 == "Maju":
-            langkah3 = st.selectbox("Langkah 3: Satu langkah terakhir!", ["Pilih arah", "Kanan", "Kiri"], key="step3")
+            langkah3 = st.selectbox("Langkah 3:", ["Pilih arah", "Kanan", "Kiri"], key="step3")
             if langkah3 == "Kiri":
-                st.success("YEAYY!! You can escape ittt😍")
+                st.success("YEAYY!! You escaped and met me 😍")
                 st.balloons()
-                st.image("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dTB3MTlnd2lsemJ4OHFmZ3RuN2VzdWIwcWhidXlnbmVrNDZsbGhzZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukk ahhh~ 💞")
-                st.markdown("> *\"Cintaku gabakal tersesat, kan jalannya selalu tertuju ke kamu 💖\"*")
-                if st.button("Oke kita lanjut lagi ya sayaang"):
+                st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExPWVjZjA1ZTQ3dTB3MTlnd2lsemJ4OHFmZ3RuN2VzdWIwcWhidXlnbmVrNDZsbGhzZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk 💞")
+                st.markdown("> *\"Cintaku gabakal tersesat, jalannya selalu ke kamu 💖\"*")
+                if st.button("Lanjut ke Level 6"):
                     naik_level()
             elif langkah3 != "Pilih arah":
-                st.warning("Wah kamu nyasar, cobaa ulang laagi~")
+                st.warning("Nyasar, coba ulang sayang 😗")
         elif langkah2 != "Pilih arah":
-            st.warning("Aduh... jalan buntu, coba arah lain byy")
+            st.warning("Jalan buntu, coba lagi ya 😘")
     elif langkah1 != "Pilih arah":
-        st.warning("Oops! Jalan itu ketutup semak-semak cinta~ 🌿 Balik lagi ya cintakuu 😘")
+        st.warning("Oops, jalan ketutup. Balik lagi yaa 💖")
 
 # ============================
-# LEVEL 6 – Lagu + Surat Cinta
+# LEVEL 6 – Virtual Bouquet
 # ============================
-
-import streamlit as st
-import random
-from PIL import Image
-
-st.set_page_config(page_title="Virtual Bouquet for You 💐", page_icon="💐", layout="centered")
-
-st.title("💐 Happy Birthday, Sayang 💐")
-st.write("Klik tombol di bawah untuk menerima buket virtualmu hari ini.")
-
-# List gambar bunga untuk buket virtual
-flowers = [
-    "https://i.imgur.com/E0aPv9U.png",  # tulip pink
-    "https://i.imgur.com/GnUnKXQ.png",  # daisy putih
-    "https://i.imgur.com/jh8LBON.png",  # mawar merah
-    "https://i.imgur.com/JbFFpTn.png",  # sunflower
-    "https://i.imgur.com/WwEvlSl.png",  # lily putih
-]
-
-if "shown" not in st.session_state:
-    st.session_state.shown = []
-
-if st.button("💐 Tap for Flowers!"):
-    remaining = list(set(flowers) - set(st.session_state.shown))
-    if remaining:
-        flower = random.choice(remaining)
-        st.image(flower, width=300)
-        st.session_state.shown.append(flower)
-        st.success("Buket untukmu! 🌸")
-        st.balloons()
-    else:
-        st.image("https://i.imgur.com/8Y1lvhw.png", width=350)  # gambar buket penuh
-        st.success("Ini buket lengkap untukmu 💖 Selamat Ulang Tahun!")
-        st.balloons()
-
-st.write("Setiap kali kamu klik, akan muncul bunga berbeda hingga menjadi buket penuh 💖")
-#Level 7#
 elif st.session_state.level == 6:
-    st.header("I Love You in All ways and Always ")
-    st.write("Ini lagu buat kamu... yang paling *sempurna* 💖. Jangan Lupa nyalain lagunya untuk dengerin sambil baca love letternya yaaa")
+    st.title("💐 Happy Birthday, Sayang 💐")
+    st.write("Klik tombol di bawah untuk menerima buket virtualmu hari ini.")
+
+    flowers = [
+        "https://i.imgur.com/E0aPv9U.png",
+        "https://i.imgur.com/GnUnKXQ.png",
+        "https://i.imgur.com/jh8LBON.png",
+        "https://i.imgur.com/JbFFpTn.png",
+        "https://i.imgur.com/WwEvlSl.png",
+    ]
+
+    if st.button("💐 Tap for Flowers!"):
+        remaining = list(set(flowers) - set(st.session_state.shown))
+        if remaining:
+            flower = random.choice(remaining)
+            st.image(flower, width=300)
+            st.session_state.shown.append(flower)
+            st.success("Buket untukmu! 🌸")
+            st.balloons()
+        else:
+            st.image("https://i.imgur.com/8Y1lvhw.png", width=350)
+            st.success("Ini buket lengkap untukmu 💖 Selamat Ulang Tahun!")
+            st.balloons()
+
+    st.write("Setiap klik akan muncul bunga berbeda hingga menjadi buket penuh 💖")
+
+    if st.button("Lanjut ke Level 7"):
+        naik_level()
+
+# ============================
+# LEVEL 7 – Love Letter & Lagu
+# ============================
+elif st.session_state.level == 7:
+    st.header("🎶 A Special Song for You")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
-    st.markdown("> *“Karena kamu yang terbaik, dan tetap sempurna di mataku 💝”*")
+    st.markdown("> *“Karena kamu tetap yang paling sempurna 💝”*")
 
     st.header("💌 A Love Letter")
     st.markdown("""
-    > Hai My Dearest,
+> Hai My Dearest,
 
-    Di hari spesial pertamamu ini sama aku, I just want to say thaat im so excited untuk nyiapin ini semuaaa. As you know aku adalah orang yang paling ga sabar nunggu ulang tahun kamu. Makasih ya udah jadi my supporter, my guard, and especially for always be my reason to smile everydayy.
+Di hari spesialmu ini, aku super excited nyiapin ini semua. Makasih ya udah jadi pendukung, penjaga, dan alasanku senyum setiap hari.
 
-    Aku tau kadang aku nyebelin, kadang suka susah dimengerti sama kamu. Tapi aku selalu sayang sama kamu koo sayaang, and it cant be replace. Kamu bakal selalu jadi yang paling *sempurna* di hatiku💖
+Aku tau aku kadang nyebelin, tapi aku selalu sayang kamu dan itu ga akan terganti. Kamu selalu jadi yang paling *sempurna* di hatiku 💖
 
-    Sekali lagi **Happy Birthday, My Love!**  
-    Semoga semua hal baik dan indah selalu menyertai langkahmu. Dan semoga aku selalu bisa jadi bagian dari kebahagiaan kamu, setiap tahun, setiap waktu.
+Sekali lagi **Happy Birthday, My Love!**  
+Semoga semua hal baik dan indah menyertai langkahmu, dan aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu.
 
-    Love you always my baby💋
+Love you always 💋
     """)
     st.balloons()
