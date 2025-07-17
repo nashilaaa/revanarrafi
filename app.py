@@ -59,7 +59,7 @@ elif st.session_state.level == 3:
             st.markdown("> *“Semoga harimu selalu penuh cinta dan bahagia 💖”*")
         elif pilihan_kotak == "Kotak B":
             st.success("Yeayyy! Kamu dapet... xtra kiss 😘")
-            st.image("https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif", caption="Heheh love youu 💞")
+            st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NldjQ0Y2U3dm85eG92Z3NybjNidTMxaGRqbGdqazRoemhiaWhvMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tpVKvAabWt3G5csMkT/giphy.gif", caption="Heheh love youu 💞")
 
         elif pilihan_kotak == "Kotak C":
             st.success("🎁 Kamu dapet hadiah spesial: *What do you want from me?* 🤭")
