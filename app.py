@@ -118,7 +118,7 @@ elif st.session_state.level == 5:
 # LEVEL 6 – Lagu + Surat Cinta
 # ============================
 elif st.session_state.level == 6:
-    st.header("🎶 ")
+    st.header("I Love You in All ways and Always ")
     st.write("Ini lagu buat kamu... yang paling *sempurna* 💖. Jangan Lupa nyalain lagunya untuk dengerin sambil baca love letternya yaaa")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
     st.markdown("> *“Karena kamu yang terbaik, dan tetap sempurna di mataku 💝”*")
