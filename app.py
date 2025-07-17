@@ -73,14 +73,8 @@ elif st.session_state.level == 3:
 # ============================
 elif st.session_state.level == 4:
     st.header("🎈 Level 4: Where do you want to celebrate?")
-    tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?", 
-        [
-            "🏠 Di rumah aja, sambil ngobrol & nonton bareng",
-            "🍽️ Romantic Dinner di tempat spesial",
-            "🌌 Jalan-jalan malmingan liat bintang",
-            "🏕️ Duduk santai di cafe terus photobooth dehh"
-        ])
-
+     pilihan_tempat = st.selectplace("Pilih salah satu tempatnya:", ["🏠 Di rumah aja, sambil ngobrol & nonton bareng", "🍽️ Romantic Dinner di tempat spesial", "🌌 Jalan-jalan malmingan liat bintang", "🏕️ Duduk santai di cafe terus photobooth dehh"])
+    tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?")
     if tempat:
         st.success(f"Okeee! Nanti kita {tempat} yaa sayaang 😍")
         if st.button("Lanjut ke Level 5"):
