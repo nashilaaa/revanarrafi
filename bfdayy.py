@@ -94,3 +94,5 @@ def start_game():
     slow_print("\n📜 Pesan Rahasia")
     final = input("Ketik 'love' untuk buka pesan rahasia: ").lower()
     if final == "love":
+     print("Happy birthday, my love!")
+
