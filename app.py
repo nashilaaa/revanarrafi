@@ -119,7 +119,7 @@ elif st.session_state.level == 5:
 # ============================
 elif st.session_state.level == 6:
     st.header("The Final Session~")
-    st. write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letteryaa
+    st. write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa")
     
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
     st.markdown("> *“I Love You Revan Ar Rafi, my only  love..💝”*")
