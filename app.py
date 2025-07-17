@@ -58,7 +58,7 @@ elif st.session_state.level == 3:
         if pilihan_kotak == "Kotak A":
             st.success("YAYY! Kamu dapet hadiah spesial 🎉💝")
             st.balloons()
-            st.markdown("> *“Semoga harimu selalu penuh cinta dan bahagia 💖”*")
+            st.markdown("> *“Semoga harimu selalu penuh cinta dan selalu bahagia sayangku💖”*")
         elif pilihan_kotak == "Kotak B":
             st.success("Yeayyy! Kamu dapet... xtra kiss 😘")
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NldjQ0Y2U3dm85eG92Z3NybjNidTMxaGRqbGdqazRoemhiaWhvMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tpVKvAabWt3G5csMkT/giphy.gif", caption="Heheh love youu 💞")
@@ -74,10 +74,10 @@ elif st.session_state.level == 3:
 # LEVEL 4
 # ============================
 elif st.session_state.level == 4:
-    st.header("🎈 Level 4: Where Do You want To Go To Celebrate?")
+    st.header("🎈 Level 4: Where Do You want To Go To Celebrate It?")
     pilihan = st.radio(
         "Kamu pilih mana sayangku?",
-        ["", "🏠 Di rumah aja", "🍽️ Romantic Dinner", "🌌 Jalan malming", "🏕️ Nongkrong cafe"]
+        ["", "🏠 Di rumah aja, jajan dan nonton sama aku", "🍽️ Romantic Dinner di mana yaa..", "🌌 Jalan-jalan malmingaan, sambil ngopii deh", "🏕️ Just sit in Cafe and..."]
     )
 
     if pilihan:
@@ -85,7 +85,7 @@ elif st.session_state.level == 4:
         if st.button("Lanjut ke Level 5"):
             naik_level()
     else:
-        if st.button("Lewati dulu & lanjut ke Level 5"):
+        if st.button("Lanjut ke Level 5"):
             naik_level()
 
 # ============================
@@ -93,7 +93,7 @@ elif st.session_state.level == 4:
 # ============================
 elif st.session_state.level == 5:
     st.header("🌀 Level 5: Love Maze")
-    st.write("Escape this maze to meet me! 💘")
+    st.write("Escape this maze to meet me!")
 
     langkah1 = st.selectbox("Langkah 1:", ["Pilih arah", "Kiri", "Kanan"], key="step1")
     if langkah1 == "Kanan":
@@ -104,34 +104,39 @@ elif st.session_state.level == 5:
                 st.success("YEAYY!! You escaped and met me 😍")
                 st.balloons()
                 st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExPWVjZjA1ZTQ3dTB3MTlnd2lsemJ4OHFmZ3RuN2VzdWIwcWhidXlnbmVrNDZsbGhzZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk 💞")
-                st.markdown("> *\"Cintaku gabakal tersesat, jalannya selalu ke kamu 💖\"*")
+                st.markdown("> *\"Kamu gabakal tersesat, kan sinyal atara kita 5G \"*")
                 if st.button("Lanjut ke Level 6"):
                     naik_level()
             elif langkah3 != "Pilih arah":
-                st.warning("Nyasar, coba ulang sayang 😗")
+                st.warning("Yah nyasar yaang, coba ulang sayang😗")
         elif langkah2 != "Pilih arah":
-            st.warning("Jalan buntu, coba lagi ya 😘")
+            st.warning("Jalan buntu, coba pilih lagi babee")
     elif langkah1 != "Pilih arah":
-        st.warning("Oops, jalan ketutup. Balik lagi yaa 💖")
+        st.warning("Oops, jalannya ketutup. Semangat sayang sedikiit lagi")
 
 # ============================
 # LEVEL 6 – Love Letter & Lagu
 # ============================
 elif st.session_state.level == 6:
-    st.header("🎶 A Special Song for You")
+    st.header("The Final Session~")
+    st. write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letteryaa
+    
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
-    st.markdown("> *“Karena kamu tetap yang paling sempurna 💝”*")
+    st.markdown("> *“I Love You Revan Ar Rafi, my only  love..💝”*")
 
     st.header("💌 A Love Letter")
     st.markdown("""
 > Hai My Dearest,
 
-Di hari spesialmu ini, aku super excited nyiapin ini semua. Makasih ya udah jadi pendukung, penjaga, dan alasanku senyum setiap hari.
+Selamat Ulang Tahun yaa sayang.. 
+Di hari spesial pertamamu sama aku ini, aku super excited nyiapin ini semua. Makasih ya udah jadi my supporter, my doctor, my parent, my brother, my everything dan tentunya jadi alasanku senyum in every single day. Glad me to have you in my life..
 
-Aku tau aku kadang nyebelin, tapi aku selalu sayang kamu dan itu ga akan terganti. Kamu selalu jadi yang paling *sempurna* di hatiku 💖
+Aku tau aku kadang nyebelin, tapi aku selalu sayang kamu ad it cant be replacefor any reason. Kamu selalu jadi yang paling *sempurna* di hatiku sayang💖
 
 Sekali lagi **Happy Birthday, My Love!**  
-Semoga semua hal baik dan indah menyertai langkahmu, dan aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu.
+Semoga semua hal baik dan indah menyertai langkahmu, dan aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu. 
+
+Semoga kita bertahan lama~~
 
 Love you always 💋
     """)
