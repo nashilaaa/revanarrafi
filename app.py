@@ -27,34 +27,34 @@ if q2:
     st.info("Okey Noted!")
 
                 
-                # LEVEL 3
-                st.header("🎁 Level 3: Choose One..")
-                pilihan_kotak = st.selectbox("Pilih salah satu kotak:", 
+      # LEVEL 3
+ st.header("🎁 Level 3: Choose One..")
+pilihan_kotak = st.selectbox("Pilih salah satu kotak:", 
                                              ["Kotak A", "Kotak B", "Kotak C"])
-                if st.button("Buka Kotaknya"):
-                    kotak_berisi = random.choice(["Kotak A", "Kotak B", "Kotak C"])
-                    if pilihan_kotak == kotak_berisi:
-                        st.balloons()
-                        st.success("YAYY! Kamu dapat hadiah istimewa 🎉")
-                        st.markdown("> *“Selamat ulang tahun cintaku! Semoga harimu penuh cinta dan tawa. Aku beruntung banget punya kamu 💖”*")
-                    else:
-                        st.warning("Yahh belum ketemu hadiahnya 😢 Tapi cintaku nggak random kok, selalu buat kamu~ 😚")
+ if st.button("Buka Kotaknya"):
+ kotak_berisi = random.choice(["Kotak A", "Kotak B", "Kotak C"])
+ if pilihan_kotak == kotak_berisi:
+ st.balloons()
+ st.success("YAYY! You received the giftt 🎉")
+ st.markdown("> *“Selamat ulang tahun cintaku! Semoga harimu selalu indah ya sayaang. Glad me to have youu💖”*")
+    else:
+    st.warning("Yahh belum ketemu hadiahnya 😢 Tapi cintaku nggak random kok, selalu buat kamu~ 😚")
 
-                # FINAL: Pilih tempat perayaan
-                st.header("🎈 Pilih Tempat Rayain Ulang Tahun")
-                tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?", 
-                                  ["🏠 Di rumah aja, sambil ngbrol tapi ada yang recokin, heheh",
-                                   "🍽️ Romantic Dinner",
-                                   "🌌 Jalan-jalan, malmingan",
-                                   "🏕️ Rayain di cafe"])
+   # FINAL: Pilih tempat perayaan
+st.header("🎈 Pilih Tempat Rayain Ulang Tahun")
+tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?", 
+["🏠 Di rumah aja, sambil ngbrol tapi ada yang recokin, heheh",
+ "🍽️ Romantic Dinner",
+ "🌌 Jalan-jalan, malmingan",
+ "🏕️ Rayain di cafe"])
 
-                if tempat:
-                    st.success(f"Okeee! Nanti kita {tempat.split(' ')[1]} ya sayang 😍")
-                    st.snow()
-                    st.markdown("## 🥂 Cheers for You!")
-                    st.write("Terima kasih udah main sampai akhir. Love You Sayaang💕")
+if tempat:
+st.success(f"Okeee! Nanti kita {tempat.split(' ')[1]} ya sayang 😍")
+st.snow()
+st.markdown("## 🥂 Cheers for You!")
+st.write("Terima kasih udah main sampai akhir. Love You Sayaang💕")
 
-            else:
-                st.warning("Hehe coba pikir lagi... makanan kan favorit kamu 🥺")
+    else:
+        st.warning("Hehe coba pikir lagi... makanan kan favorit kamu 🥺")
     else:
         st.warning("Bukan itu sayang 😗 coba ingat-ingat lagiii~")
