@@ -100,12 +100,12 @@ elif st.session_state.level == 5:
         if langkah2 == "Maju":
             langkah3 = st.selectbox("Langkah 3: Satu langkah terakhir!", ["Pilih arah", "Kanan", "Kiri"], key="step3")
             if langkah3 == "Kiri":
-                st.success("YEAYY!! Kamu berhasil keluar dari labirin dan nemuin akuuu 😍💕")
+                st.success("YEAYY!! Kamu berhasil keluar dari labirin dan nemuin akuuu😍💕")
                 st.balloons()
-                st.image("https://media.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif", caption="Pelukk ahhh~ 💞")
+                st.image("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dTB3MTlnd2lsemJ4OHFmZ3RuN2VzdWIwcWhidXlnbmVrNDZsbGhzZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukk ahhh~ 💞")
                 st.markdown("> *\"Cintaku nggak pernah tersesat, karena jalannya selalu menuju kamu 💖\"*")
                 st.snow()
-                if st.button("Lanjut ke Hadiah Terakhir 🎶"):
+                if st.button("Oke lanjut sayaang"):
                     naik_level()
             elif langkah3 != "Pilih arah":
                 st.warning("Wah kamu nyasar, balik lagi yaa dari awal~ 🌀")
@@ -118,22 +118,22 @@ elif st.session_state.level == 5:
 # LEVEL 6 – Lagu + Surat Cinta
 # ============================
 elif st.session_state.level == 6:
-    st.header("🎶 Lagu & Surat Cinta Untuk Kamu")
-    st.write("Ini lagu buat kamu... yang paling *sempurna* 💖")
+    st.header("🎶 ")
+    st.write("Ini lagu buat kamu... yang paling *sempurna* 💖. Jangan Lupa nyalain lagunya untuk dengerin sambil baca love letternya yaaa")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
     st.markdown("> *“Karena kamu yang terbaik, dan tetap sempurna di mataku 💝”*")
 
-    st.header("💌 Surat Cinta Buat Kamu")
+    st.header("💌 A Love Letter")
     st.markdown("""
     > Hai My Dearest,
 
-    Di hari spesial pertamamu ini sama aku, I just want to say thaat im so excited untuk nyiapin ini semuaaa. Kamu itu anugerah terindah yang datang di hidupku. Makasih ya udah jadi penyemangatku, pelindungku, dan alasan aku tersenyum tiap hari.
+    Di hari spesial pertamamu ini sama aku, I just want to say thaat im so excited untuk nyiapin ini semuaaa. As you know aku adalah orang yang paling ga sabar nunggu ulang tahun kamu. Makasih ya udah jadi my supporter, my guard, and especially for always be my reason to smile everydayy.
 
-    Aku tahu kadang aku nyebelin, kadang suka susah dimengerti. Tapi cintaku ke kamu selalu nyata, dan gak akan berubah. Kamu tetap jadi yang paling *sempurna* di mataku 💖
+    Aku tau kadang aku nyebelin, kadang suka susah dimengerti sama kamu. Tapi aku selalu sayang sama kamu koo sayaang, and it cant be replace. Kamu bakal selalu jadi yang paling *sempurna* di hatiku💖
 
-    **Happy Birthday, Love!**  
-    Semoga segala hal indah menyertai langkahmu. Dan semoga aku bisa jadi bagian dari kebahagiaan kamu, setiap tahun, setiap waktu.
+    Sekali lagi **Happy Birthday, My Love!**  
+    Semoga semua hal baik dan indah selalu menyertai langkahmu. Dan semoga aku selalu bisa jadi bagian dari kebahagiaan kamu, setiap tahun, setiap waktu.
 
-    Love you always 💋
+    Love you always my baby💋
     """)
     st.balloons()
