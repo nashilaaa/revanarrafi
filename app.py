@@ -25,7 +25,7 @@ if st.session_state.level == 1:
     if jawaban1:
         if jawaban1 == "09-11":
             st.success("Yeeeaayy kamu inget!🥹💕 Kamu lulus Level 1!")
-            st.balloon()
+            st.balloons()
             if st.button("Lanjut ke Level 2"):
                 naik_level()
         else:
