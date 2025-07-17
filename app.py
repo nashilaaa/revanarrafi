@@ -114,43 +114,12 @@ elif st.session_state.level == 5:
     elif langkah1 != "Pilih arah":
         st.warning("Oops, jalan ketutup. Balik lagi yaa 💖")
 
-# ============================
-# LEVEL 6 – Virtual Bouquet
-# ============================
-elif st.session_state.level == 6:
-    st.title("💐 Happy Birthday, Sayang 💐")
-    st.write("Klik tombol di bawah untuk menerima buket virtualmu hari ini.")
-
-    flowers = [
-        "https://i.imgur.com/E0aPv9U.png",
-        "https://i.imgur.com/GnUnKXQ.png",
-        "https://i.imgur.com/jh8LBON.png",
-        "https://i.imgur.com/JbFFpTn.png",
-        "https://i.imgur.com/WwEvlSl.png",
-    ]
-
-    if st.button("💐 Tap for Flowers!"):
-        remaining = list(set(flowers) - set(st.session_state.shown))
-        if remaining:
-            flower = random.choice(remaining)
-            st.image(flower, width=300)
-            st.session_state.shown.append(flower)
-            st.success("Buket untukmu! 🌸")
-            st.balloons()
-        else:
-            st.image("https://i.imgur.com/8Y1lvhw.png", width=350)
-            st.success("Ini buket lengkap untukmu 💖 Selamat Ulang Tahun!")
-            st.balloons()
-
-    st.write("Setiap klik akan muncul bunga berbeda hingga menjadi buket penuh 💖")
-
-    if st.button("Lanjut ke Level 7"):
         naik_level()
 
 # ============================
-# LEVEL 7 – Love Letter & Lagu
+# LEVEL 6 – Love Letter & Lagu
 # ============================
-elif st.session_state.level == 7:
+elif st.session_state.level == 6:
     st.header("🎶 A Special Song for You")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
     st.markdown("> *“Karena kamu tetap yang paling sempurna 💝”*")
