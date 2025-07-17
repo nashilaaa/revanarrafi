@@ -114,8 +114,6 @@ elif st.session_state.level == 5:
     elif langkah1 != "Pilih arah":
         st.warning("Oops, jalan ketutup. Balik lagi yaa 💖")
 
-        naik_level()
-
 # ============================
 # LEVEL 6 – Love Letter & Lagu
 # ============================
