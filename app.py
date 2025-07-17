@@ -12,7 +12,7 @@ if "level" not in st.session_state:
 # Fungsi untuk naik level
 def next_level():
     st.session_state.level += 1
-    st.experimental_rerun()
+    st.rerun()
 
 # ============================
 # LEVEL 1
