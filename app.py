@@ -88,17 +88,17 @@ elif st.session_state.level == 4:
             naik_level()
 
 # ============================
-# LEVEL 5 – Love Maze
+# LEVEL 5 – Love Maze (Dropdown version)
 # ============================
 elif st.session_state.level == 5:
     st.header("🌀 Level 5: Love Maze")
     st.write("Kamu ada di labirin cinta, cari jalan ke akuuu 💘")
 
-    langkah1 = st.radio("Langkah 1: Mau ke mana dulu?", ["Kiri", "Kanan"], key="step1")
+    langkah1 = st.selectbox("Langkah 1: Mau ke mana dulu?", ["Pilih arah", "Kiri", "Kanan"], key="step1")
     if langkah1 == "Kanan":
-        langkah2 = st.radio("Langkah 2: Terus ke mana lagi?", ["Maju", "Mundur"], key="step2")
+        langkah2 = st.selectbox("Langkah 2: Terus ke mana lagi?", ["Pilih arah", "Maju", "Mundur"], key="step2")
         if langkah2 == "Maju":
-            langkah3 = st.radio("Langkah 3: Satu langkah terakhir!", ["Kanan", "Kiri"], key="step3")
+            langkah3 = st.selectbox("Langkah 3: Satu langkah terakhir!", ["Pilih arah", "Kanan", "Kiri"], key="step3")
             if langkah3 == "Kiri":
                 st.success("YEAYY!! Kamu berhasil keluar dari labirin dan nemuin akuuu 😍💕")
                 st.balloons()
@@ -107,11 +107,11 @@ elif st.session_state.level == 5:
                 st.snow()
                 if st.button("Lanjut ke Hadiah Terakhir 🎶"):
                     naik_level()
-            else:
+            elif langkah3 != "Pilih arah":
                 st.warning("Wah kamu nyasar, balik lagi yaa dari awal~ 🌀")
-        elif langkah2:
+        elif langkah2 != "Pilih arah":
             st.warning("Aduh... jalan buntu, coba arah lain yaa 😢")
-    elif langkah1:
+    elif langkah1 != "Pilih arah":
         st.warning("Oops! Jalan itu ketutup semak-semak cinta~ 🌿 Balik lagi ya 😘")
 
 # ============================
