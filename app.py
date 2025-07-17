@@ -137,3 +137,73 @@ elif st.session_state.level == 6:
     Love you always my baby💋
     """)
     st.balloons()
+
+import streamlit as st
+from PIL import Image
+import os
+import random
+
+GRID_SIZE = 3
+TILE_FOLDER = "tiles"
+
+# Load tile dari folder
+@st.cache_data
+def load_tiles():
+    tiles = []
+    for i in range(9):
+        path = os.path.join(TILE_FOLDER, f"tile_{i}.jpg")
+        tile = Image.open(path)
+        tiles.append(tile)
+    return tiles
+
+# Setup session state
+if "tile_order" not in st.session_state:
+    st.session_state.tile_order = list(range(9))
+    random.shuffle(st.session_state.tile_order)
+
+if "selected" not in st.session_state:
+    st.session_state.selected = None
+
+if "solved" not in st.session_state:
+    st.session_state.solved = False
+
+# Judul
+st.title("🧩 Puzzle Foto 3x3 (Klik-Tukar)")
+
+# Load gambar
+tiles = load_tiles()
+
+# Tampilkan grid
+for row in range(GRID_SIZE):
+    cols = st.columns(GRID_SIZE)
+    for col in range(GRID_SIZE):
+        idx = row * GRID_SIZE + col
+        tile_idx = st.session_state.tile_order[idx]
+        img = tiles[tile_idx]
+
+        with cols[col]:
+            if st.button(" ", key=f"tile-{idx}"):
+                if st.session_state.selected is None:
+                    st.session_state.selected = idx
+                else:
+                    i, j = st.session_state.selected, idx
+                    st.session_state.tile_order[i], st.session_state.tile_order[j] = \
+                        st.session_state.tile_order[j], st.session_state.tile_order[i]
+                    st.session_state.selected = None
+
+                    # Cek apakah puzzle selesai
+                    if st.session_state.tile_order == list(range(9)):
+                        st.session_state.solved = True
+            st.image(img, use_column_width=True)
+
+# Selesai?
+if st.session_state.solved:
+    st.success("🎉 Puzzle selesai!")
+
+# Tombol reset
+if st.button("🔄 Acak Ulang"):
+    st.session_state.tile_order = list(range(9))
+    random.shuffle(st.session_state.tile_order)
+    st.session_state.selected = None
+    st.session_state.solved = False
+
