@@ -34,7 +34,7 @@ if st.session_state.level == 1:
 # LEVEL 2
 # ============================
 elif st.session_state.level == 2:
-    st.header("🧠 Level 2: Tentang Kamu 💘")
+    st.header("🧠 Level 2: About You💘")
     st.write("Silahkan diisii sayaang~")
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
 
@@ -93,7 +93,7 @@ elif st.session_state.level == 4:
 # ============================
 elif st.session_state.level == 5:
     st.header("🌀 Level 5: Love Maze")
-    st.write("Kamu ada di labirin cinta, cari jalan ke akuuu 💘")
+    st.write("Ceritanya kamu lagi ada di labirin, escape from it then kamu bakal ketemu aaku💘")
 
     langkah1 = st.selectbox("Langkah 1: Mau ke mana dulu?", ["Pilih arah", "Kiri", "Kanan"], key="step1")
     if langkah1 == "Kanan":
@@ -101,19 +101,18 @@ elif st.session_state.level == 5:
         if langkah2 == "Maju":
             langkah3 = st.selectbox("Langkah 3: Satu langkah terakhir!", ["Pilih arah", "Kanan", "Kiri"], key="step3")
             if langkah3 == "Kiri":
-                st.success("YEAYY!! Kamu berhasil keluar dari labirin dan nemuin akuuu😍💕")
+                st.success("YEAYY!! You can escape ittt😍")
                 st.balloons()
                 st.image("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dTB3MTlnd2lsemJ4OHFmZ3RuN2VzdWIwcWhidXlnbmVrNDZsbGhzZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukk ahhh~ 💞")
-                st.markdown("> *\"Cintaku nggak pernah tersesat, karena jalannya selalu menuju kamu 💖\"*")
-                st.snow()
-                if st.button("Oke lanjut sayaang"):
+                st.markdown("> *\"Cintaku gabakal tersesat, kan jalannya selalu tertuju ke kamu 💖\"*")
+                if st.button("Oke kita lanjut lagi ya sayaang"):
                     naik_level()
             elif langkah3 != "Pilih arah":
-                st.warning("Wah kamu nyasar, balik lagi yaa dari awal~ 🌀")
+                st.warning("Wah kamu nyasar, cobaa ulang laagi~")
         elif langkah2 != "Pilih arah":
-            st.warning("Aduh... jalan buntu, coba arah lain yaa 😢")
+            st.warning("Aduh... jalan buntu, coba arah lain byy")
     elif langkah1 != "Pilih arah":
-        st.warning("Oops! Jalan itu ketutup semak-semak cinta~ 🌿 Balik lagi ya 😘")
+        st.warning("Oops! Jalan itu ketutup semak-semak cinta~ 🌿 Balik lagi ya cintakuu 😘")
 
 # ============================
 # LEVEL 6 – Lagu + Surat Cinta
