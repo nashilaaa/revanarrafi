@@ -43,7 +43,7 @@ if jawaban1:
             # ===============================
             # LEVEL 3: Tebak Hadiah
             # ===============================
-            st.header("🎁 Level 3: Tebak Hadiah di Kotak")
+            st.header("🎁 Level 3: Choose One..")
             pilihan_kotak = st.selectbox("Pilih salah satu kotak:", ["Kotak A", "Kotak B", "Kotak C"])
 
             if st.button("Buka Kotaknya"):
@@ -69,7 +69,6 @@ if jawaban1:
 
                 if tempat:
                     st.success(f"Okeee! Nanti kita `{tempat}` yaa sayaang 😍")
-                    st.snow()
                     st.markdown("## 🥂 Cheers for You!")
                     st.write("Terima kasih udah main sampai akhir. You are loved so much 💕")
 
@@ -80,7 +79,7 @@ if jawaban1:
                     st.markdown("""
                     > Hai sayangku,
 
-                    Di hari spesial ini, aku cuma mau bilang betapa bersyukurnya aku punya kamu. Kamu itu anugerah terindah yang datang di hidupku. Makasih ya udah jadi penyemangatku, pelindungku, dan alasan aku tersenyum tiap hari.
+                    Di hari spesial pertamamu ini sama aku, aku cuma mau bilang betapa bersyukurnya aku punya kamu. Kamu itu anugerah terindah yang datang di hidupku. Makasih ya udah jadi penyemangatku, pelindungku, dan alasan aku tersenyum tiap hari.
 
                     Aku tahu kadang aku nyebelin, kadang suka susah dimengerti. Tapi cintaku ke kamu selalu nyata, dan gak akan berubah. Kamu tetap jadi yang paling *sempurna* di mataku 💖
 
