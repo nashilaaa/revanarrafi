@@ -24,24 +24,15 @@ if jawaban1:
         # LEVEL 2: Tentang Kamu
         # ===============================
         st.header("🧠 Level 2: Tentang Kamu 💘")
-        st.write("Jawab jujur yaa, aku pengen tahu sisi lucu kamu~")
-        q2 = st.radio(
-            "Kegiatan yang paling bikin kamu happy seharian itu apa?",
-            [
-                "🍜 Makan enak trus rebahan",
-                "🎮 Main game sampe lupa waktu",
-                "🫶 Ngobrol sama aku",
-                "😗 Ngambekin aku tanpa sebab",
-                "📱Scroll TikTok sampe lupa mandi"
-            ]
-        )
+st.write("Silahkan diisii sayaang~")
 
-        if q2:
-            st.info("Noted yaa hehe 😘")
-            st.success("Lanjut ke level 3 yaa~")
+jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
 
+if jawaban2:
+    st.info(f"Okey notedd😘")
+    st.success("Okee lannjuut")
             # ===============================
-            # LEVEL 3: Tebak Hadiah
+            # LEVEL 3: PIct Your Gift
             # ===============================
             st.header("🎁 Level 3: Choose One..")
             pilihan_kotak = st.selectbox("Pilih salah satu kotak:", ["Kotak A", "Kotak B", "Kotak C"])
@@ -52,13 +43,17 @@ if jawaban1:
                     st.success("YAYY! Kamu dapet hadiah spesial 🎉💝")
                     st.balloons()
                     st.markdown("> *“Selamat ulang tahun cintaku! Semoga harimu selalu penuh cinta dan bahagia. I’m sooo lucky to have you 💖”*")
-                else:
-                    st.warning("Yahh belum ketemu hadiahnya 😢 Tapi cintaku nggak random kok, selalu buat kamu~ 😚")
+                elif:
+                    pilihan_kotak == "Kotak B":
+                    st.success("Yeayyy! Get xtra kiss")
+                elif:
+                    pilihan_kotak == "Kotak C":
+                    st.success(*special gift "What Do You Want From mee?")
 
                 # ===============================
-                # LEVEL 4: Pilih Tempat Perayaan
+                # LEVEL 4: Choose your place to go
                 # ===============================
-                st.header("🎈 Level 4: Pilih Tempat Rayain Ulang Tahun")
+                st.header("🎈 Level 4: Where do you want to celebrate your day?")
                 tempat = st.radio("Kamu mau rayain ulang tahunnya di mana nih?", 
                     [
                         "🏠 Di rumah aja, sambil ngobrol & nonton bareng",
@@ -71,6 +66,40 @@ if jawaban1:
                     st.success(f"Okeee! Nanti kita `{tempat}` yaa sayaang 😍")
                     st.markdown("## 🥂 Cheers for You!")
                     st.write("Terima kasih udah main sampai akhir. You are loved so much 💕")
+
+                    # LEVEL 5 - Mini Game Labirin Cinta
+st.header("🌀 Level 5: Love Maze")
+st.write("Ceritanya kamu lagi ada di labirin dan harus temuin jalan kelaur buat ketemu sama aku, semangat💘")
+
+langkah1 = st.radio("Langkah 1: Mau ke mana dulu?", ["Kiri", "Kanan"], key="step1")
+
+if langkah1:
+    if langkah1 == "Kanan":
+        langkah2 = st.radio("Langkah 2: Terus ke mana lagi?", ["Maju", "Mundur"], key="step2")
+
+        if langkah2:
+            if langkah2 == "Maju":
+                langkah3 = st.radio("Langkah 3: Satu langkah terakhir!", ["Kanan", "Kiri"], key="step3")
+
+                if langkah3:
+                    if langkah3 == "Kiri":
+                        st.balloons()
+                        st.success("YEAYY!! Kamu berhasil keluar dari labirin dan nemuin akuuu 😍💕")
+                        st.image("https://media.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif", caption="Pelukk ahhh~ 💞")
+
+                        st.markdown("""
+                        ### 🎁 Hadiah Buat Kamu
+                        Karena kamu udah nemuin aku... ini hadiah spesial dari akuuu 😘
+                        > *"Cintaku nggak pernah tersesat, karena jalannya selalu menuju kamu 💖"*
+                        """)
+                        st.snow()
+                    else:
+                        st.warning("Wah kamu nyasar, balik lagi yaa dari awal~ 🌀")
+            else:
+                st.warning("Aduh... jalan buntu, coba arah lain yaa sayang 😢")
+    else:
+        st.warning("Oops! Jalan itu ketutup semak-semak cinta~ 🌿 Balik lagi ya 😘")
+
 
                     # ===============================
                     # MUSIK: Lagu Romantis
