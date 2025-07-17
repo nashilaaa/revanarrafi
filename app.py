@@ -117,6 +117,43 @@ elif st.session_state.level == 5:
 # ============================
 # LEVEL 6 – Lagu + Surat Cinta
 # ============================
+
+import streamlit as st
+import random
+from PIL import Image
+
+st.set_page_config(page_title="Virtual Bouquet for You 💐", page_icon="💐", layout="centered")
+
+st.title("💐 Happy Birthday, Sayang 💐")
+st.write("Klik tombol di bawah untuk menerima buket virtualmu hari ini.")
+
+# List gambar bunga untuk buket virtual
+flowers = [
+    "https://i.imgur.com/E0aPv9U.png",  # tulip pink
+    "https://i.imgur.com/GnUnKXQ.png",  # daisy putih
+    "https://i.imgur.com/jh8LBON.png",  # mawar merah
+    "https://i.imgur.com/JbFFpTn.png",  # sunflower
+    "https://i.imgur.com/WwEvlSl.png",  # lily putih
+]
+
+if "shown" not in st.session_state:
+    st.session_state.shown = []
+
+if st.button("💐 Tap for Flowers!"):
+    remaining = list(set(flowers) - set(st.session_state.shown))
+    if remaining:
+        flower = random.choice(remaining)
+        st.image(flower, width=300)
+        st.session_state.shown.append(flower)
+        st.success("Buket untukmu! 🌸")
+        st.balloons()
+    else:
+        st.image("https://i.imgur.com/8Y1lvhw.png", width=350)  # gambar buket penuh
+        st.success("Ini buket lengkap untukmu 💖 Selamat Ulang Tahun!")
+        st.balloons()
+
+st.write("Setiap kali kamu klik, akan muncul bunga berbeda hingga menjadi buket penuh 💖")
+#Level 7#
 elif st.session_state.level == 6:
     st.header("I Love You in All ways and Always ")
     st.write("Ini lagu buat kamu... yang paling *sempurna* 💖. Jangan Lupa nyalain lagunya untuk dengerin sambil baca love letternya yaaa")
