@@ -73,6 +73,14 @@ if jawaban1:
                     st.write("Terima kasih udah main sampai akhir. You are loved so much 💕")
 
                     # ===============================
+                    # MUSIK: Lagu Romantis
+                    # ===============================
+                    st.header("🎶 Lagu untuk Kamu")
+                    st.write("Ini lagu buat kamu... yang paling *sempurna* 💖")
+                    st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
+                    st.markdown("> *“Karena kamu yang terbaik, dan tetap sempurna di mataku 💝”*")
+
+                    # ===============================
                     # BONUS: Surat Cinta 💌
                     # ===============================
                     st.header("💌 Surat Cinta Buat Kamu")
@@ -89,13 +97,7 @@ if jawaban1:
                     Love you always 💋
                     """)
 
-                    # ===============================
-                    # MUSIK: Lagu Romantis
-                    # ===============================
-                    st.header("🎶 Lagu untuk Kamu")
-                    st.write("Ini lagu buat kamu... yang paling *sempurna* 💖")
-                    st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
-                    st.markdown("> *“Karena kamu yang terbaik, dan tetap sempurna di mataku 💝”*")
+
 
     else:
         st.error("Bukan itu sayang 😗 coba ingat-ingat lagiii~")
