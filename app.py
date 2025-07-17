@@ -23,7 +23,7 @@ if st.session_state.level == 1:
 
     if jawaban1:
         if jawaban1 == "09-11":
-            st.success("Yeeeaayy kamu inget!🥹💕 Kamu lulus Level 1!")
+            st.success("Yeeeaayy kamu inget!🥹💕 Oke lanjuut sayangg")
             st.balloons()
             if st.button("Lanjut ke Level 2"):
                 naik_level()
@@ -39,7 +39,7 @@ elif st.session_state.level == 2:
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
 
     if jawaban2:
-        st.info("Noteddd 😘")
+        st.info("Okeeyy noteddd 😘")
         st.success("Kita lanjut yaa sayang~")
         if st.button("Lanjut ke Level 3"):
             naik_level()
@@ -62,6 +62,7 @@ elif st.session_state.level == 3:
         elif pilihan_kotak == "Kotak C":
             st.success("🎁 You can request anything: ")
             st.markdown("> *“What Do You Want From Me??”*")
+            st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmdlamVpeXg0eTUydmkxYWxlbzJsbmRucmhhZzZ1MGxja2NhcWFycyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wrBURfbZmqqXu/giphy.gif")
 
     if st.button("Lanjut ke Level 4"):
         naik_level()
@@ -70,12 +71,12 @@ elif st.session_state.level == 3:
 # LEVEL 4
 # ============================
 elif st.session_state.level == 4:
-    st.header("🎈 Level 4: Coming Soon or Fill This?")
-    st.write("Level ini masih kosong dulu yaa... atau kamu bisa pilih ini:")
+    st.header("🎈 Level 4: Where Do You want To Go To Celebrate?")
+    st.write("Pilih sesuai keinginanmu yaa sayaang:")
 
     pilihan = st.radio(
-        "Kalau kamu harus pilih salah satu tempat rayain ulang tahun, kamu pilih yang mana?",
-        ["", "🏠 Di rumah aja", "🍽️ Dinner romantis", "🌌 Liat bintang bareng", "🏕️ Duduk santai di cafe"],
+        "Kamu harus pilih salah satu tempat rayain ulang tahun, kamu pilih yang mana sayangku?",
+        ["", "🏠 Di rumah aja, jajan dan nonton sama aku", "🍽️ Romantic Dinner", "🌌 Jalan-jalan malmingann, sambil ngopii", "🏕️ Duduk santai di cafe"],
         index=0
     )
 
