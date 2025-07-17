@@ -48,7 +48,7 @@ if jawaban1:
 
             if st.button("Buka Kotaknya"):
                 kotak_berisi = random.choice(["Kotak A", "Kotak B", "Kotak C"])
-                if pilihan_kotak == kotak_berisi:
+                if pilihan_kotak == "Kotak A":
                     st.success("YAYY! Kamu dapet hadiah spesial 🎉💝")
                     st.balloons()
                     st.markdown("> *“Selamat ulang tahun cintaku! Semoga harimu selalu penuh cinta dan bahagia. I’m sooo lucky to have you 💖”*")
