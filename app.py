@@ -9,8 +9,8 @@ st.set_page_config(page_title="Birthday Quest 💖", page_icon="🎂")
 if "level" not in st.session_state:
     st.session_state.level = 1
 
-# Fungsi untuk naik level
-def next_level():
+# Fungsi Naik Level
+def naik_level():
     st.session_state.level += 1
     st.rerun()
 
@@ -26,7 +26,8 @@ if st.session_state.level == 1:
         if jawaban1 == "09-11":
             st.success("Yeeeaayy kamu inget!🥹💕 Kamu lulus Level 1!")
             st.balloons()
-            st.button("Lanjut ke Level 2", on_click=next_level)
+            if st.button("Lanjut ke Level 2"):
+                naik_level()
         else:
             st.error("Bukan itu sayang 😗 coba ingat-ingat lagiii~")
 
@@ -41,7 +42,8 @@ elif st.session_state.level == 2:
     if jawaban2:
         st.info("Noteddd 😘")
         st.success("Kita lanjut yaa sayang~")
-        st.button("Lanjut ke Level 3", on_click=next_level)
+        if st.button("Lanjut ke Level 3"):
+            naik_level()
 
 # ============================
 # LEVEL 3
@@ -60,7 +62,8 @@ elif st.session_state.level == 3:
         elif pilihan_kotak == "Kotak C":
             st.success("🎁 Kamu dapet hadiah spesial: *What do you want from me?* 🤭")
 
-    st.button("Lanjut ke Level 4", on_click=next_level)
+    if st.button("Lanjut ke Level 4"):
+        naik_level()
 
 # ============================
 # LEVEL 4
@@ -77,7 +80,8 @@ elif st.session_state.level == 4:
 
     if tempat:
         st.success(f"Okeee! Nanti kita {tempat} yaa sayaang 😍")
-        st.button("Lanjut ke Level 5", on_click=next_level)
+        if st.button("Lanjut ke Level 5"):
+            naik_level()
 
 # ============================
 # LEVEL 5 – Love Maze
@@ -97,7 +101,8 @@ elif st.session_state.level == 5:
                 st.image("https://media.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif", caption="Pelukk ahhh~ 💞")
                 st.markdown("> *\"Cintaku nggak pernah tersesat, karena jalannya selalu menuju kamu 💖\"*")
                 st.snow()
-                st.button("Lanjut ke Hadiah Terakhir 🎶", on_click=next_level)
+                if st.button("Lanjut ke Hadiah Terakhir 🎶"):
+                    naik_level()
             else:
                 st.warning("Wah kamu nyasar, balik lagi yaa dari awal~ 🌀")
         elif langkah2:
@@ -116,16 +121,15 @@ elif st.session_state.level == 6:
 
     st.header("💌 Surat Cinta Buat Kamu")
     st.markdown("""
-> Hai My Dearest,
+    > Hai My Dearest,
 
-Di hari spesial pertamamu ini sama aku, I just want to say thaat im so excited untuk nyiapin ini semuaaa. Kamu itu anugerah terindah yang datang di hidupku. Makasih ya udah jadi penyemangatku, pelindungku, dan alasan aku tersenyum tiap hari.
+    Di hari spesial pertamamu ini sama aku, I just want to say thaat im so excited untuk nyiapin ini semuaaa. Kamu itu anugerah terindah yang datang di hidupku. Makasih ya udah jadi penyemangatku, pelindungku, dan alasan aku tersenyum tiap hari.
 
-Aku tahu kadang aku nyebelin, kadang suka susah dimengerti. Tapi cintaku ke kamu selalu nyata, dan gak akan berubah. Kamu tetap jadi yang paling *sempurna* di mataku 💖
+    Aku tahu kadang aku nyebelin, kadang suka susah dimengerti. Tapi cintaku ke kamu selalu nyata, dan gak akan berubah. Kamu tetap jadi yang paling *sempurna* di mataku 💖
 
-**Happy Birthday, Love!**  
-Semoga segala hal indah menyertai langkahmu. Dan semoga aku bisa jadi bagian dari kebahagiaan kamu, setiap tahun, setiap waktu.
+    **Happy Birthday, Love!**  
+    Semoga segala hal indah menyertai langkahmu. Dan semoga aku bisa jadi bagian dari kebahagiaan kamu, setiap tahun, setiap waktu.
 
-Love you always 💋
+    Love you always 💋
     """)
-
     st.balloons()
