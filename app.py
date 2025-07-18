@@ -28,7 +28,7 @@ if st.session_state.level == 1:
         if jawaban1 == "09-11":
             st.success("Yeeeaayy kamu inget!🥹💕 Oke lanjuut sayangg")
             st.balloons()
-            time.sleep(3)
+            time.sleep(2)
             naik_level()
         else:
             st.error("Bukan itu sayang.. coba inget-inget lagiii~")
@@ -43,7 +43,7 @@ elif st.session_state.level == 2:
     if jawaban2:
         st.info("Okeeyy noteddd😘")
         st.success("Kita lanjut yaa sayang~")
-        time.sleep(3)
+        time.sleep(2)
         naik_level()
 
 # ============================
@@ -65,7 +65,7 @@ elif st.session_state.level == 3:
             st.success("🎁 You can request anything: ")
             st.markdown("> *“What Do You Want From Me??”*")
             st.image("https://media.giphy.com/media/wrBURfbZmqqXu/giphy.gif")
-        time.sleep(3)
+        time.sleep(8)
         naik_level()
 
 # ============================
@@ -81,7 +81,7 @@ elif st.session_state.level == 4:
 
     if pilihan and pilihan != "":
         st.success(f"Okeee! Nanti kita {pilihan} yaa sayaang 😍")
-        time.sleep(3)
+        time.sleep(4)
         naik_level()
 
 # ============================
@@ -93,15 +93,17 @@ elif st.session_state.level == 5:
 
     langkah1 = st.selectbox("Langkah 1:", ["Pilih arah", "Kiri", "Kanan"], key="step1")
     if langkah1 == "Kanan":
+        st.write("Yeayy ketemu jalannyaa")
         langkah2 = st.selectbox("Langkah 2:", ["Pilih arah", "Maju", "Mundur"], key="step2")
         if langkah2 == "Maju":
+            st.write("Yeaaayy bener lagii, lanjut terus sayaang")
             langkah3 = st.selectbox("Langkah 3:", ["Pilih arah", "Kanan", "Kiri"], key="step3")
             if langkah3 == "Kiri":
                 st.success("YEAYY!! You escaped and met me 😍")
                 st.balloons()
                 st.image("https://media.giphy.com/media/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk 💞")
                 st.markdown("> *\"Kamu gabakal tersesat, kan sinyal atara kita 5G \"*")
-                time.sleep(4)
+                time.sleep(7)
                 naik_level()
             elif langkah3 != "Pilih arah":
                 st.warning("Oops, jalannya ketutup. Semangat sayang sedikiit lagi")
@@ -125,13 +127,13 @@ if st.button("Lanjut Baca Surat 💌"):
 > Hai My Dearest,
 
 Selamat Ulang Tahun yaa sayang..  
-Di hari spesial pertamamu sama aku ini, as you know aku super excited buat nyiapin ini semua. Makasih ya udah jadi my supporter, my doctor, my parent, my brother, my everything, especiaallyy karna jadi alasanku senyum in every single day. Glad me to have you in my life..
+Di hari spesial pertamamu sama aku ini, as you know aku adalah orang yang super excited buat nyiapin ini semua. Makasih ya udah selalu mau jadi my supporter, my doctor, my parent, my brother, my everything,and especiaallyy karna selalu jadi alasanku senyum in every single day. Glad me to have you in my life..
 
 Semoga di hari spesialmu ini kamu panjang umur, makin sehat, selalu dimudahkan segala urusannya sama Allah. Aku bener bener can't describe how much i love you sayang.. maaf yaa kalo web ini masih jelek heheh aku belum se pro itu walau modal chatgpt hihihih
 
-Sayang.. Aku tau kadang aku nyebelin, tapi aku selalu sayang kamu and it can't be replaced for any reason. And i will try my best for you, i will try to be better than before. Kamu bakal selalu jadi yang paling *sempurna* di hatiku sayang💖
+Sayang.. Aku tau kadang aku nyebelin, tapi aku selalu sayang kamu and it can't be replaced for any reason. And i will try my best for you, i will try to be better than before. And know it, kamu bakal selalu jadi yang paling *sempurna* di hatiku sayang💖
 
-Sekali lagi **Happy Birthday, My Love!**  
+Sekali lagi **Happy Birthday, My Love Revan Ar Rafi!**  
 Semoga semua hal baik dan indah di dunia ini selalu menyertai langkahmu, dan semoga aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu. 
 
 Semoga kita bertahan lama sayangg~~
