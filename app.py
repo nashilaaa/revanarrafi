@@ -116,13 +116,18 @@ elif st.session_state.level == 5:
 # LEVEL 6 – Love Letter & Lagu
 # ============================
 elif st.session_state.level == 6:
-    st.header("The Final Session~")
-    st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa")
+    st.header("🎵 The Final Session~")
+    st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa~")
 
-    st.video("https://www.youtube.com/embed/Y3eFGpL1q7M?autoplay=1")
- 
-if st.button("Lanjut Baca Surat 💌"):
-    st.header("💌 A Love Letter")
+    st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
+
+    if not st.session_state.sudah_liat_lagu:
+        if st.button("Press for read the letter💌"):
+            st.session_state.sudah_liat_lagu = True
+            st.rerun()
+
+    if st.session_state.sudah_liat_lagu:
+        st.header("💌 A Love Letter")
     st.markdown("""
 > Hai My Dearest,
 
