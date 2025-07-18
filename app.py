@@ -4,10 +4,15 @@ import random
 from PIL import Image
 
 st.set_page_config(page_title="Happy Birthday baby", page_icon="🎂")
-# Inisialisasi session state dulu
-if "sudah_liat_lagu" not in st.session_state:
-    st.session_state.sudah_liat_lagu = True
+# Inisialisasi session state
+if "level" not in st.session_state:
+    st.session_state.level = 1
 
+if "shown" not in st.session_state:
+    st.session_state.shown = []
+
+if "sudah_liat_lagu" not in st.session_state:
+    st.session_state.sudah_liat_lagu = False
 # ============================
 # Session State untuk Level
 # ============================
