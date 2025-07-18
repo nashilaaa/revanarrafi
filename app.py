@@ -2,7 +2,7 @@ import streamlit as st
 import random
 from PIL import Image
 
-st.set_page_config(page_title="Birthday Quest 💖", page_icon="🎂")
+st.set_page_config(page_title="Happy Birthday baby", page_icon="🎂")
 
 # ============================
 # Session State untuk Level
@@ -21,9 +21,9 @@ def naik_level():
 # LEVEL 1
 # ============================
 if st.session_state.level == 1:
-    st.title("🎉 Birthday Quest: Love Level Challenge")
+    st.title("🎉 Mini Games: Dear My BIrthday Boy")
     st.header("💌 Level 1: Our Anniv Date")
-    jawaban1 = st.text_input("Kapan kita jadian? (format: dd-mm)")
+    jawaban1 = st.text_input("Kapan yaa kamu nembak aku? (format: dd-mm)")
 
     if jawaban1:
         if jawaban1 == "09-11":
@@ -32,17 +32,17 @@ if st.session_state.level == 1:
             if st.button("Lanjut ke Level 2"):
                 naik_level()
         else:
-            st.error("Bukan itu sayang 😗 coba ingat-ingat lagiii~")
+            st.error("Bukan itu sayang.. coba inget-inget lagiii~")
 
 # ============================
 # LEVEL 2
 # ============================
 elif st.session_state.level == 2:
-    st.header("🧠 Level 2: About You💘")
+    st.header("Level 2: About You💘")
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
 
     if jawaban2:
-        st.info("Okeeyy noteddd 😘")
+        st.info("Okeeyy noteddd😘")
         st.success("Kita lanjut yaa sayang~")
         if st.button("Lanjut ke Level 3"):
             naik_level()
@@ -56,7 +56,7 @@ elif st.session_state.level == 3:
 
     if st.button("Buka Kotaknya"):
         if pilihan_kotak == "Kotak A":
-            st.success("YAYY! Kamu dapet hadiah spesial 🎉💝")
+            st.success("YAYY! Kamu dapet hadiah🎉💝")
             st.balloons()
             st.markdown("> *“Semoga harimu selalu penuh cinta dan selalu bahagia sayangku💖”*")
         elif pilihan_kotak == "Kotak B":
@@ -107,11 +107,11 @@ elif st.session_state.level == 5:
                 st.markdown("> *\"Kamu gabakal tersesat, kan sinyal atara kita 5G \"*")
                 if st.button("Lanjut ke Level 6"):
                     naik_level()
-            elif langkah3 != "Pilih arah":
+            elif langkah1 != "Pilih arah":
                 st.warning("Yah nyasar yaang, coba ulang sayang😗")
         elif langkah2 != "Pilih arah":
             st.warning("Jalan buntu, coba pilih lagi babee")
-    elif langkah1 != "Pilih arah":
+    elif langkah3 != "Pilih arah":
         st.warning("Oops, jalannya ketutup. Semangat sayang sedikiit lagi")
 
 # ============================
@@ -129,14 +129,16 @@ elif st.session_state.level == 6:
 > Hai My Dearest,
 
 Selamat Ulang Tahun yaa sayang.. 
-Di hari spesial pertamamu sama aku ini, aku super excited nyiapin ini semua. Makasih ya udah jadi my supporter, my doctor, my parent, my brother, my everything dan tentunya jadi alasanku senyum in every single day. Glad me to have you in my life..
+Di hari spesial pertamamu sama aku ini, as you know aku super excited buat nyiapin ini semua. Makasih ya udah jadi my supporter, my doctor, my parent, my brother, my everything, especiaallyy karna jadi alasanku senyum in every single day. Glad me to have you in my life..
 
-Aku tau aku kadang nyebelin, tapi aku selalu sayang kamu ad it cant be replacefor any reason. Kamu selalu jadi yang paling *sempurna* di hatiku sayang💖
+Semoga di hari spesialmu ini kamu panjang umur, makin sehat, selalu dimudahkan segala urusannya sama Allah. Aku bener bener cant describe how much i love you sayang.. maaf yaa kalo web ini masih jelek heheh aku belum se pro itu walau modal chatgpt hihihih
+
+Sayang.. Aku tau kadang aku nyebelin, tapi aku selalu sayang kamu and it cant be replace for any reason, apapun itu. And i will try my best for you, i will try to be better than be4. Kamu bakal selalu jadi yang paling *sempurna* di hatiku sayang💖
 
 Sekali lagi **Happy Birthday, My Love!**  
-Semoga semua hal baik dan indah menyertai langkahmu, dan aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu. 
+Semoga semua hal baik dan indah di dunia ini selalu menyertai langkahmu, dan semoga aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu. 
 
-Semoga kita bertahan lama~~
+Semoga kita bertahan lama sayangg~~
 
 Love you always 💋
     """)
