@@ -45,7 +45,11 @@ elif st.session_state.level == 2:
         st.info("Okeeyy noteddd😘")
         st.success("Kita lanjut yaa sayang~")
         if st.button("Lanjut ke Level 3"):
-            naik_level()
+            elapsed = time.time() - st.session_state.level2_start
+        if elapsed > 7:  # misalnya 7 detik
+            st.session_state.level += 1
+            del st.session_state.level2_start
+            st.rerun()
 
 # ============================
 # LEVEL 3
