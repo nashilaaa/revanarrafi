@@ -29,8 +29,9 @@ if st.session_state.level == 1:
         if jawaban1 == "09-11":
             st.success("Yeeeaayy kamu inget!🥹💕 Oke lanjuut sayangg")
             st.balloons()
-            if st.button("Lanjut ke Level 2"):
-                naik_level()
+            time.sleep(3)
+st.session_state.level += 1
+st.rerun()
         else:
             st.error("Bukan itu sayang.. coba inget-inget lagiii~")
 
@@ -44,13 +45,9 @@ elif st.session_state.level == 2:
     if jawaban2:
         st.info("Okeeyy noteddd😘")
         st.success("Kita lanjut yaa sayang~")
-        if st.button("Lanjut ke Level 3"):
-            elapsed = time.time() - st.session_state.level2_start
-        if elapsed > 7:  # misalnya 7 detik
-            st.session_state.level += 1
-            del st.session_state.level2_start
-            st.rerun()
-
+        time.sleep(3)
+st.session_state.level += 1
+st.rerun()
 # ============================
 # LEVEL 3
 # ============================
@@ -71,9 +68,9 @@ elif st.session_state.level == 3:
             st.markdown("> *“What Do You Want From Me??”*")
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmdlamVpeXg0eTUydmkxYWxlbzJsbmRucmhhZzZ1MGxja2NhcWFycyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wrBURfbZmqqXu/giphy.gif")
 
-    if st.button("Lanjut ke Level 4"):
-        naik_level()
-
+    time.sleep(3)
+st.session_state.level += 1
+st.rerun()
 # ============================
 # LEVEL 4
 # ============================
@@ -86,11 +83,10 @@ elif st.session_state.level == 4:
 
     if pilihan:
         st.success(f"Okeee! Nanti kita {pilihan} yaa sayaang 😍")
-        if st.button("Lanjut ke Level 5"):
-            naik_level()
-    else:
-        if st.button("Lanjut ke Level 5"):
-            naik_level()
+        time.sleep(3)
+st.session_state.level += 1
+st.rerun()
+   
 
 # ============================
 # LEVEL 5
@@ -117,6 +113,10 @@ elif st.session_state.level == 5:
             st.warning("Jalan buntu, coba pilih lagi babee")
     elif langkah3 != "Pilih arah":
         st.warning("Oops, jalannya ketutup. Semangat sayang sedikiit lagi")
+
+time.sleep(3)
+st.session_state.level += 1
+st.rerun()
 
 # ============================
 # LEVEL 6 – Love Letter & Lagu
