@@ -126,7 +126,7 @@ elif st.session_state.level == 6:
 
     if not st.session_state.sudah_liat_lagu:
         if st.button("Press for read the letter💌"):
-            st.session_state.sudah_liat_lagu = True
+            st.session_state.sudah_liat_lagu = False
             st.rerun()
 
     if st.session_state.sudah_liat_lagu:
