@@ -119,7 +119,7 @@ elif st.session_state.level == 6:
 
     st.video("https://www.youtube.com/embed/Y3eFGpL1q7M?autoplay=1")
  
- if st.button("Lanjut Baca Surat 💌"):
+if st.button("Lanjut Baca Surat 💌"):
     st.header("💌 A Love Letter")
     st.markdown("""
 > Hai My Dearest,
