@@ -117,7 +117,6 @@ elif st.session_state.level == 6:
     st.header("The Final Session~")
     st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa")
 
-    # Autoplay Youtube (note: masih tergantung browser support)
     st.video("https://www.youtube.com/embed/Y3eFGpL1q7M?autoplay=1")
 
     st.header("💌 A Love Letter")
