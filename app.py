@@ -125,16 +125,14 @@ elif st.session_state.level == 5:
 # ============================
 elif st.session_state.level == 6:
     st.header("🎵 The Final Session~")
-    st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa~")
-
-    st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
-
+    
     if not st.session_state.sudah_liat_lagu:
-        if st.button("Press for read the letter💌"):
-            st.session_state.sudah_liat_lagu = False
+        st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa~ 💖")
+        st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")  # Bisa pakai autoplay kalau embed
+        if st.button("Press button to read 💌"):
+            st.session_state.sudah_liat_lagu = True
             st.rerun()
-
-    if st.session_state.sudah_liat_lagu:
+    else:
         st.header("💌 A Love Letter")
     st.markdown("""
 > Hai My Dearest,
