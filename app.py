@@ -132,12 +132,12 @@ elif st.session_state.level == 6:
         st.session_state.sudah_liat_lagu = False
 
     # Tampilkan video lagu
-    st.write("Putar lagunya dulu yaa, sambil nikmati suasana~ 💖")
+    st.write("This song for you yang paling *sempurna* di hati aku, Jangan lupa play lagunya dulu yaa buat baca love letternya~ ")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
 
     # Tombol untuk lanjut
     if not st.session_state.sudah_liat_lagu:
-        if st.button("Aku udah dengerin 🎧"):
+        if st.button("Press the button to read 💌"):
             st.session_state.sudah_liat_lagu = True
             st.rerun()
 
