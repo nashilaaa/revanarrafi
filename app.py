@@ -128,27 +128,29 @@ elif st.session_state.level == 6:
     
     if not st.session_state.sudah_liat_lagu:
         st.write("Ini lagu buat kamu... yang paling *sempurna*.. Jangan lupa play lagunya yaa sebelum baca love letternyaa~ 💖")
-        st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")  # Bisa pakai autoplay kalau embed
-        if st.button("Press button to read 💌"):
+        st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
+
+        if st.button("Lanjut baca surat cinta 💌"):
             st.session_state.sudah_liat_lagu = True
             st.rerun()
+
     else:
         st.header("💌 A Love Letter")
-    st.markdown("""
+        st.markdown("""
 > Hai My Dearest,
 
-Selamat Ulang Tahun yaa sayang..  
-Di hari spesial pertamamu sama aku ini, as you know aku adalah orang yang super excited buat nyiapin ini semua. Makasih ya udah selalu mau jadi my supporter, my doctor, my parent, my brother, my everything,and especiaallyy karna selalu jadi alasanku senyum in every single day. Glad me to have you in my life..
+Selamat Ulang Tahun yaa sayang.. 
+Di hari spesial pertamamu sama aku ini, as you know aku super excited buat nyiapin ini semua. Makasih ya udah jadi my supporter, my doctor, my parent, my brother, my everything, especiaallyy karna jadi alasanku senyum in every single day. Glad me to have you in my life..
 
-Semoga di hari spesialmu ini kamu panjang umur, makin sehat, selalu dimudahkan segala urusannya sama Allah. Aku bener bener can't describe how much i love you sayang.. maaf yaa kalo web ini masih jelek heheh aku belum se pro itu walau modal chatgpt hihihih
+Semoga di hari spesialmu ini kamu panjang umur, makin sehat, selalu dimudahkan segala urusannya sama Allah. Aku bener bener cant describe how much i love you sayang.. maaf yaa kalo web ini masih jelek heheh aku belum se pro itu walau modal chatgpt hihihih
 
-Sayang.. Aku tau kadang aku nyebelin, tapi aku selalu sayang kamu and it can't be replaced for any reason. And i will try my best for you, i will try to be better than before. And know it, kamu bakal selalu jadi yang paling *sempurna* di hatiku sayang💖
+Sayang.. Aku tau kadang aku nyebelin, tapi aku selalu sayang kamu and it cant be replace for any reason, apapun itu. And i will try my best for you, i will try to be better than be4. Kamu bakal selalu jadi yang paling *sempurna* di hatiku sayang💖
 
-Sekali lagi **Happy Birthday, My Love Revan Ar Rafi!**  
+Sekali lagi **Happy Birthday, My Love!**  
 Semoga semua hal baik dan indah di dunia ini selalu menyertai langkahmu, dan semoga aku bisa terus jadi bagian dari kebahagiaanmu, setiap tahun, setiap waktu. 
 
 Semoga kita bertahan lama sayangg~~
 
 Love you always 💋
-""")
-    st.balloons()
+        """)
+        st.balloons()
