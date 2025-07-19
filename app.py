@@ -64,9 +64,9 @@ elif st.session_state.level == 3:
 
     if st.button("Buka Kotaknya"):
         if pilihan_kotak == "Kotak A":
-            st.success("YAYY! Kamu dapet hadiah🎉💝")
+            st.success("Yeaay! You received small gift🎉💝")
             st.balloons()
-            st.markdown("> *“Semoga harimu selalu penuh cinta dan selalu bahagia sayangku💖”*")
+            st.markdown("> *“Semoga harimu selalu dipenuhi cinta dan kebahagiaan sayangku💖”*")
         elif pilihan_kotak == "Kotak B":
             st.success("Yeayyy! Kamu dapet... xtra kiss 😘")
             st.image("https://media.giphy.com/media/tpVKvAabWt3G5csMkT/giphy.gif", caption="Heheh love youu 💞")
@@ -84,7 +84,7 @@ elif st.session_state.level == 4:
     st.header("🎈 Level 4: Where Do You want To Go To Celebrate It?")
     pilihan = st.radio(
         "Kamu pilih mana sayangku?",
-        ["", "🏠 Di rumah aja, jajan dan nonton sama aku", "🍽️ Romantic Dinner di mana yaa..",
+        ["", "🏠 Di rumah aja, jajan dan nonton sama aku", "🍽️ Romantic Dinner",
          "🌌 Jalan-jalan malmingaan, sambil ngopii deh", "🏕️ Just sit in Cafe and romantic deeptalk..."]
     )
 
@@ -110,8 +110,8 @@ elif st.session_state.level == 5:
             if langkah3 == "Kiri":
                 st.success("YEAYY!! You escaped and met me 😍")
                 st.balloons()
-                st.image("https://media.giphy.com/media/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk 💞")
-                st.markdown("> *\"Kamu gabakal tersesat, kan sinyal antara kita 5G \"*")
+                st.image("https://media.giphy.com/media/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk duluu sayaang")
+                st.markdown("> *\"Kamu gabakal tersesat byy, kan sinyal antara kita 5G heheh\"*")
                 time.sleep(7)
                 naik_level()
             elif langkah3 != "Pilih arah":
