@@ -125,7 +125,7 @@ elif st.session_state.level == 5:
 # LEVEL 6 – Love Letter & Lagu
 # ============================
 elif st.session_state.level == 6:
-    st.header("🎵 The Final Session~")
+    st.header("The Final Session~")
 
     # Inisialisasi state
     if 'sudah_liat_lagu' not in st.session_state:
