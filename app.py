@@ -49,7 +49,7 @@ elif st.session_state.level == 2:
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
     jawaban3 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?")
 
-    if jawaban2:
+    if jawaban2, jawaban3:
         st.info("Okeeyy noteddd😘")
         st.success("Kita lanjut yaa sayang~")
         st.balloons()
