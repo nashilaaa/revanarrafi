@@ -47,6 +47,7 @@ if st.session_state.level == 1:
 elif st.session_state.level == 2:
     st.header("Level 2: About You💘")
     jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
+    jawaban3 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?")
 
     if jawaban2:
         st.info("Okeeyy noteddd😘")
