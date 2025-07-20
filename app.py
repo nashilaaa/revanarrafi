@@ -46,15 +46,18 @@ if st.session_state.level == 1:
 # ============================
 elif st.session_state.level == 2:
     st.header("Level 2: About You💘")
-    jawaban2 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?")
-    jawaban3 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?")
+    jawaban2_1 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?",key="q1")
+    jawaban2_2 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?",key="q2")
 
-    if jawaban2, jawaban3:
-        st.info("Okeeyy noteddd😘")
-        st.success("Kita lanjut yaa sayang~")
-        st.balloons()
-        time.sleep(2)
-        naik_level()
+    if jawaban2_1 and jawaban2_2:
+        if "sudah_jawab_level2" not in st.session_state:
+            st.session_state.sudah_jawab_level2 = True
+            st.info("Okeey noted sayangkuu")
+            st.success("Kita lanjut ya sayaang~")
+            time.sleep(2.5)
+            st.session_state.level += 1
+            st.rerun()
+
 
 # ============================
 # LEVEL 3
