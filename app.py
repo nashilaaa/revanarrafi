@@ -180,12 +180,14 @@ with st.expander("🔐 Developer Mode"):
     password = st.text_input("Masukkan password:", type="password")
     if password == "nashilla123":  # Ganti dengan password rahasia kamu
         st.subheader("📝 Jawaban Pasanganmu:")
-        
+
         jawaban_lv2 = st.session_state.get("jawaban_level2", {})
 
-        st.write("📍 Level 2 – Kegiatan Favorit:")
-        st.write(jawaban_lv2.get("kegiatanFavorit", "Belum dijawab"))
+        st.write("📍 Level 2 – Hal yang bikin happy seharian:")
+        st.write(jawaban_lv2.get("happy", "Belum dijawab"))
 
-        st.write("📍 Level 2 – Penghiburan Saat Sedih:")
-        st.write(jawaban_lv2.get("penghiburanSaatSedih", "Belum dijawab"))
+        st.write("📍 Level 2 – Hal yang bikin sebel/bete:")
+        st.write(jawaban_lv2.get("sebel", "Belum dijawab"))
 
+        st.subheader("📌 Status Lainnya:")
+        st.json(st.session_state)
