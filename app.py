@@ -52,7 +52,7 @@ elif st.session_state.level == 2:
     if jawaban2_1 and jawaban2_2:
         if "sudah_jawab_level2" not in st.session_state:
             st.session_state.sudah_jawab_level2 = True
-            st.info("Okeey noted sayangkuu")
+            st.write("Okeey noted sayangkuu")
             st.success("Kita lanjut ya sayaang~")
             time.sleep(2.5)
             st.session_state.level += 1
@@ -66,7 +66,7 @@ elif st.session_state.level == 3:
     st.header("🎁 Level 3: Choose Your Gift!")
     pilihan_kotak = st.selectbox("Pilih salah satu kotak:", ["Kotak A", "Kotak B", "Kotak C"])
 
-    if st.button("Buka Kotaknya"):
+    if st.button("Open the gift!"):
         if pilihan_kotak == "Kotak A":
             st.success("Yeaay! You received small gift🎉💝")
             st.balloons()
