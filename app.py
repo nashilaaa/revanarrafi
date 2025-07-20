@@ -51,6 +51,11 @@ elif st.session_state.level == 2:
 
     if jawaban2_1 and jawaban2_2:
         if "sudah_jawab_level2" not in st.session_state:
+            # Simpan ke session state
+        st.session_state.jawaban_level2 = {
+            "happy": jawaban1,
+            "sedih": jawaban2
+        }
             st.session_state.sudah_jawab_level2 = True
             st.write("Okeey noted sayangkuu")
             st.success("Kita lanjut ya sayaang~")
