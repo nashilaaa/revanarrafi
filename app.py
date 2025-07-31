@@ -1,9 +1,8 @@
 import streamlit as st
 import time
-import random
-from PIL import Image
 
 st.set_page_config(page_title="Happy Birthday baby", page_icon="🎂")
+
 # Inisialisasi session state
 if "level" not in st.session_state:
     st.session_state.level = 1
@@ -13,11 +12,9 @@ if "shown" not in st.session_state:
 
 if "sudah_liat_lagu" not in st.session_state:
     st.session_state.sudah_liat_lagu = False
-# ============================
-# Session State untuk Level
-# ============================
-if "level" not in st.session_state:
-    st.session_state.level = 1
+
+if "mulai" not in st.session_state:
+    st.session_state.mulai = False
 
 # Fungsi naik level otomatis
 def naik_level():
@@ -25,24 +22,23 @@ def naik_level():
     st.rerun()
 
 # ============================
-# HALAMAN PEMBUKA (MAIN PAGE)
+# HALAMAN PEMBUKA
 # ============================
 if not st.session_state.mulai:
-    st.title("Happy Birthday My Love<33")
-    st.image("foto_kalian.jpg", caption="Aku & Kamu", use_column_width=True)
+    st.title("Happy Birthday My Love <33")
+    st.image("foto_kalian.jpg", caption="Me & You", use_column_width=True)
     st.markdown("""
-    > Today was your day, aku mau kasi something matter yang ga cuma lucu tapi berkesan heheh  
+    > Today was your day sayaangg... I want to give you something cute but meaningful   
     > So... Are you ready? 😚  
     """)
     if st.button("Click to Start~ 💖"):
         st.session_state.mulai = True
         st.rerun()
 
-
 # ============================
 # LEVEL 1
 # ============================
-if st.session_state.level == 1:
+elif st.session_state.level == 1:
     st.title("🎉 Mini Games: Dear My Birthday Boy")
     st.header("💌 Level 1: Our Anniv Date")
     jawaban1 = st.text_input("Kapan yaa kamu nembak aku? (format: dd-mm)")
@@ -61,25 +57,20 @@ if st.session_state.level == 1:
 # ============================
 elif st.session_state.level == 2:
     st.header("Level 2: About You💘")
-    jawaban2_1 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?",key="q1")
-    jawaban2_2 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?",key="q2")
+    jawaban2_1 = st.text_input("Apa kegiatan/hal yang paling bikin kamu happy seharian?", key="q1")
+    jawaban2_2 = st.text_input("Apa kegiatan/hal yang bikin kamu sebel atau bete?", key="q2")
 
     if jawaban2_1 and jawaban2_2:
         if "sudah_jawab_level2" not in st.session_state:
-            # Simpan ke session_state
             st.session_state.jawaban_level2 = {
-                "happy": jawaban2_1,
-                "sebel": jawaban2_2
+                "kegiatanFavorit": jawaban2_1,
+                "penghiburanSaatSedih": jawaban2_2
             }
-            st.session_state.sudah_jawab_level2 = True
-
             st.session_state.sudah_jawab_level2 = True
             st.write("Okeey noted sayangkuu")
             st.success("Kita lanjut ya sayaang~")
             time.sleep(2.5)
-            st.session_state.level += 1
-            st.rerun()
-
+            naik_level()
 
 # ============================
 # LEVEL 3
@@ -148,26 +139,18 @@ elif st.session_state.level == 5:
         st.warning("Yah nyasar yaang, coba ulang sayang😗")
 
 # ============================
-# LEVEL 6 – Love Letter & Lagu
+# LEVEL 6
 # ============================
 elif st.session_state.level == 6:
     st.header("The Final Session~")
-
-    # Inisialisasi state
-    if 'sudah_liat_lagu' not in st.session_state:
-        st.session_state.sudah_liat_lagu = False
-
-    # Tampilkan video lagu
     st.write("This song for you yang paling *sempurna* di hati aku, Jangan lupa play lagunya dulu yaa buat baca love letternya~ ")
     st.video("https://www.youtube.com/watch?v=Y3eFGpL1q7M")
 
-    # Tombol untuk lanjut
     if not st.session_state.sudah_liat_lagu:
         if st.button("Press the button to read 💌"):
             st.session_state.sudah_liat_lagu = True
             st.rerun()
 
-    # Setelah tombol ditekan, tampilkan Love Letter di bawahnya
     if st.session_state.sudah_liat_lagu:
         st.header("💌 A Love Letter")
         st.markdown("""
@@ -188,21 +171,16 @@ Semoga kita bertahan lama sayangg~~
 Love you always 💋
         """)
         st.balloons()
-        # ============================
-# DEVELOPER MODE – CEK JAWABAN
+
+# ============================
+# DEVELOPER MODE
 # ============================
 with st.expander("🔐 Developer Mode"):
     password = st.text_input("Masukkan password:", type="password")
-    if password == "nashilla123":  # Ganti dengan password rahasia kamu
+    if password == "nashilla123":
         st.subheader("📝 Jawaban Pasanganmu:")
-
         jawaban_lv2 = st.session_state.get("jawaban_level2", {})
-
-        st.write("📍 Level 2 – Hal yang bikin happy seharian:")
-        st.write(jawaban_lv2.get("happy", "Belum dijawab"))
-
-        st.write("📍 Level 2 – Hal yang bikin sebel/bete:")
-        st.write(jawaban_lv2.get("sebel", "Belum dijawab"))
-
-        st.subheader("📌 Status Lainnya:")
-        st.json(st.session_state)
+        st.write("📍 Level 2 – Kegiatan Favorit:")
+        st.write(jawaban_lv2.get("kegiatanFavorit", "Belum dijawab"))
+        st.write("📍 Level 2 – Penghiburan Saat Sedih:")
+        st.write(jawaban_lv2.get("penghiburanSaatSedih", "Belum dijawab"))
