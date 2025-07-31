@@ -128,7 +128,7 @@ elif st.session_state.level == 5:
                 st.success("YEAYY!! You escaped and met me 😍")
                 st.balloons()
                 st.image("https://media.giphy.com/media/5sokLWDYub7efuAD1M/giphy.gif", caption="Pelukkk duluu sayaang")
-                st.markdown("> *\"Kamu gabakal tersesat byy, kan sinyal antara kita 5G heheh\"*")
+                st.markdown("> *\"Tenang aja kamu gabakal tersesat byy, kan sinyal antara kita 5G heheh\"*")
                 time.sleep(7)
                 naik_level()
             elif langkah3 != "Pilih arah":
