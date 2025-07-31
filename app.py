@@ -3,21 +3,6 @@ import time
 import random
 from PIL import Image
 
-# ============================
-# HALAMAN PEMBUKA (MAIN PAGE)
-# ============================
-if not st.session_state.mulai:
-    st.title("Happy Birthday My Love<33")
-    st.image("foto_kalian.jpg", caption="Aku & Kamu", use_column_width=True)
-    st.markdown("""
-    > Today was your day, aku mau kasi something matter yang ga cuma lucu tapi berkesan heheh  
-    > So... Are you ready? 😚  
-    """)
-    if st.button("Click to Start~ 💖"):
-        st.session_state.mulai = True
-        st.rerun()
-
-
 st.set_page_config(page_title="Happy Birthday baby", page_icon="🎂")
 # Inisialisasi session state
 if "level" not in st.session_state:
@@ -38,6 +23,21 @@ if "level" not in st.session_state:
 def naik_level():
     st.session_state.level += 1
     st.rerun()
+
+# ============================
+# HALAMAN PEMBUKA (MAIN PAGE)
+# ============================
+if not st.session_state.mulai:
+    st.title("Happy Birthday My Love<33")
+    st.image("foto_kalian.jpg", caption="Aku & Kamu", use_column_width=True)
+    st.markdown("""
+    > Today was your day, aku mau kasi something matter yang ga cuma lucu tapi berkesan heheh  
+    > So... Are you ready? 😚  
+    """)
+    if st.button("Click to Start~ 💖"):
+        st.session_state.mulai = True
+        st.rerun()
+
 
 # ============================
 # LEVEL 1
