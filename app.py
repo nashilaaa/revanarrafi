@@ -153,7 +153,7 @@ elif st.session_state.level == 6:
 
     if st.session_state.sudah_liat_lagu:
         st.header("💌 A Love Letter")
-        slow_print("""
+        st.markdown("""
 > Hai My Dearest,
 
 Selamat Ulang Tahun yaa sayang.. 
