@@ -26,7 +26,7 @@ def naik_level():
 # ============================
 if not st.session_state.mulai:
     st.title("Happy Birthday My Love <33")
-    st.image("My_Pict.jpg", caption="Me & You", use_column_width=True)
+    st.image("My_Pict.jpg", caption="Me & You", use_container_width=True)
     st.markdown("""
     > Today was your day sayaangg... I want to give you something cute but meaningful   
     > So... Are you ready? 😚  
